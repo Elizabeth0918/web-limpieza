@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Configuración de la página oficial de KMG Elizabeth
-st.set_page_config(page_title="KMG Elizabeth - Servicio Independent de Limpieza", page_icon="✨", layout="wide")
+st.set_page_config(page_title="KMG Elizabeth - Servicio Independiente de Limpieza", page_icon="✨", layout="wide")
 
 # Estilos CSS con tu paleta real: Blanco, Celeste (#0284C7) y Detalles Dorados (#D97706)
 st.markdown("""
@@ -35,8 +35,8 @@ st.markdown('<div style="text-align:center;"><img src="https://ibb.co" width="32
 st.markdown('<p class="main-title">KMG ELIZABETH</p>', unsafe_allow_html=True)
 st.markdown('<p class="subtitle">LIMPIEZA · SERVICIO INDEPENDIENTE EN URUGUAY</p>', unsafe_allow_html=True)
 
-# --- CONFIGURACIÓN DE PESTAÑAS DE NAVEGACIÓN ---
-tab1, tab2, tab3 = st.tabs(["🧮 Cotizador de Jornadas", "⚡ Nuestros Servicios Especializados", "📞 Contacto Directo"])
+# --- CONFIGURACIÓN DE PESTAÑAS DE NAVEGACIÓN (CORREGIDO SIN PRONOMBRES) ---
+tab1, tab2, tab3 = st.tabs(["🧮 Cotizador de Jornadas", "⚡ Servicios Especializados", "📞 Contacto Directo"])
 
 # ==========================================
 # PESTAÑA 1: COTIZADOR AUTOMATIZADO
@@ -56,7 +56,7 @@ with tab1:
         
         modalidad = st.radio("2. Modalidad de contratación:", ["Por Hora (Servicio Puntual)", "Plan Mensual (Contratación Recurrente)"])
         
-        # Filtro estricto solicitado de 4, 6 u 8 horas aplicados a ambas opciones
+        # Filtro estricto de 4, 6 u 8 horas aplicado
         if modalidad == "Por Hora (Servicio Puntual)":
             horas_opcion = st.selectbox("3. Horas requeridas para la jornada puntual:", [4, 6, 8])
             horas = horas_opcion
@@ -87,7 +87,7 @@ with tab1:
         st.markdown(f"""
         <div class="summary-box">
             <h3 style="color:#D97706 !important; margin-top:0px;">📋 Tu Presupuesto KMG</h3>
-            <p style="color:#334155;"><b>Servicio contratado:</b> {tipo_servicio}</p>
+            <p style="color:#334155;"><b>Servicio seleccionado:</b> {tipo_servicio}</p>
             <p style="color:#334155;"><b>Modalidad elegida:</b> {modalidad}</p>
             <p style="color:#334155;"><b>Duración de jornada:</b> {frecuencia_texto}</p>
             <p style="color:#334155;"><b>Costo base:</b> $U {precio_actual} / hora</p>
@@ -114,11 +114,11 @@ with tab1:
                 st.error("Por favor, completa tu nombre y teléfono para enviar la orden.")
 
 # ==========================================
-# PESTAÑA 2: NUESTROS SERVICIOS
+# PESTAÑA 2: SERVICIOS ESPECIALIZADOS
 # ==========================================
 with tab2:
-    st.markdown("<h3 style='color:#D97706 !important; margin-top:0px;'>⚡ Soluciones Profesionales KMG Elizabeth</h3>", unsafe_allow_html=True)
-    st.write("Servicios con un alto estándar de confianza, pulcritud y detalle.")
+    st.markdown("<h3 style='color:#D97706 !important; margin-top:0px;'>⚡ Soluciones Profesionales Independientes</h3>", unsafe_allow_html=True)
+    st.write("Servicios con un alto estándar de confianza, pulcritud y detalle. Atención directa.")
     st.write("")
     
     col1, col2, col3 = st.columns(3)
@@ -128,7 +128,7 @@ with tab2:
         st.markdown('<div class="feature-box"><h3>🏥 Clínicas y Consultorios</h3><p>Sanitización rigurosa bajo estrictas normas de higiene para la seguridad de entornos médicos.</p></div>', unsafe_allow_html=True)
 
     with col2:
-        st.markdown('<div class="feature-box"><h3>🏢 Oficinas Corporativas</h3><p>Ambientes laborales impecables que potencian la productividad. Flexibilidad total de horarios.</p></div>', unsafe_allow_html=True)
+        st.markdown('<div class="feature-box"><h3>🏢 Oficinas Profesionales</h3><p>Ambientes laborales impecables que potencian la productividad. Flexibilidad total de horarios.</p></div>', unsafe_allow_html=True)
         st.markdown('<div class="feature-box"><h3>🏗️ Fines de Obra</h3><p>Eliminación profunda de restos de obra, pintura y polvo fino para dejar la propiedad lista para habitar.</p></div>', unsafe_allow_html=True)
 
     with col3:
@@ -139,8 +139,8 @@ with tab2:
 # PESTAÑA 3: CONTACTO DIRECTO
 # ==========================================
 with tab3:
-    st.markdown("<h3 style='color:#D97706 !important; margin-top:0px;'>📞 Vías de Comunicación</h3>", unsafe_allow_html=True)
-    st.write("Atención personalizada e inmediata para presupuestos especiales.")
+    st.markdown("<h3 style='color:#D97706 !important; margin-top:0px;'>📞 Vías de Comunicación Directa</h3>", unsafe_allow_html=True)
+    st.write("Atención personalizada e inmediata para requerimientos o presupuestos especiales.")
     st.write("")
     
     c_info, c_form = st.columns(2)
@@ -148,20 +148,19 @@ with tab3:
     with c_info:
         st.markdown(f"""
         <div style="background-color:#FFFFFF; padding:20px; border-radius:12px; border-left:6px solid #D97706; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-            <h4 style="color:#0284C7 !important; margin-top:0px; font-weight:bold;">📍 Canales Oficiales</h4>
-            <p style="color:#334155;"><b>Empresa:</b> KMG Elizabeth - Limpieza</p>
-            <p style="color:#334155;"><b>Administración Directa:</b> <a href="https://wa.me" style="color:#0284C7; font-weight:bold;">091 295 245</a></p>
+            <h4 style="color:#0284C7 !important; margin-top:0px; font-weight:bold;">📍 Contacto Oficial</h4>
+            <p style="color:#334155;"><b>Nombre:</b> KMG Elizabeth - Limpieza</p>
+            <p style="color:#334155;"><b>Atención Directa:</b> <a href="https://wa.me" style="color:#0284C7; font-weight:bold;">091 295 245</a></p>
             <p style="color:#334155;"><b>Área de Cobertura:</b> Montevideo y alrededores.</p>
-            <p style="color:#334155;"><b>Horario administrativo:</b> Lunes a Sábados de 08:00 a 18:00 hs.</p>
+            <p style="color:#334155;"><b>Horario de atención:</b> Lunes a Sábados de 08:00 a 18:00 hs.</p>
         </div>
         """, unsafe_allow_html=True)
         
     with c_form:
-        st.write("**¿Tienes un requerimiento especial? Déjanos un aviso:**")
-        c_nombre = st.text_input("Nombre completo u Organización:")
-        c_msg = st.text_area("Cuéntanos qué necesitas resolver:")
+        st.write("**¿Se requiere un servicio o presupuesto especial? Dejar un aviso:**")
+        c_nombre = st.text_input("Nombre completo o Empresa:")
+        c_msg = st.text_area("Detalles del requerimiento:")
         
         if st.button("Enviar Consulta Express"):
-            st.success("¡Muchas gracias! Tu requerimiento ha sido registrado en KMG Elizabeth.")
+            st.success("¡Muchas gracias! El requerimiento ha sido registrado.")
 
-st.write("---")
