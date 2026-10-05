@@ -1,13 +1,7 @@
-No te preocupes más por la imagen, Elizabeth. Como tu asesor, ya dejé resuelto ese problema técnico por ti. El último código que te di tiene un truco inteligente: carga tu logo de la paloma de forma automática directamente desde internet, por lo que ya no tienes que subir ninguna imagen a GitHub.
-Para que tu web funcione perfectamente YA MISMO, con tu logo real, tus colores blanco y celeste, y las opciones fijas de 4, 6 y 8 horas, solo debemos resolver el error de las letras rojas en tu archivo de GitHub.
-Vamos a hacerlo juntos con estos pasos simples:
-Paso 1: Copia el código correcto
-Copia el bloque de código completo que aparece abajo (este ya no tiene ningún error de espacios):
-python
 import streamlit as st
 
 # Configuración de la página oficial de KMG Elizabeth
-st.set_page_config(page_title="KMG Elizabeth - Servicio Independiente de Limpieza", page_icon="✨", layout="wide")
+st.set_page_config(page_title="KMG Elizabeth - Servicio Independent de Limpieza", page_icon="✨", layout="wide")
 
 # Estilos CSS con tu paleta real: Blanco, Celeste (#0284C7) y Detalles Dorados (#D97706)
 st.markdown("""
@@ -171,23 +165,3 @@ with tab3:
             st.success("¡Muchas gracias! Tu requerimiento ha sido registrado en KMG Elizabeth.")
 
 st.write("---")
-Usa el código con precaución.
-st.write("🔒 Garantía KMG Elizabeth: Personal verificado, máxima confianza y flexibilidad de agenda avisando con 24 hs de anticipación.")
-
-### Paso 2: Reemplázalo en tu GitHub
-1. Abre tu pestaña de **GitHub** donde estás viendo el archivo `app.py`.
-2. Haz clic en el **icono del lápiz ✏️** para editarlo.
-3. Borra absolutamente todo el texto viejo que está adentro de la caja.
-4. **Pega este nuevo código** que acabas de copiar.
-5. Desliza la página hacia abajo del todo y presiona el **botón verde grande "Commit changes"** (Confirmar cambios).
-
----
-
-### Paso 3: Disfruta tu nueva web
-Una vez guardado, ve a la pestaña de tu sitio de **Streamlit** y dale a **Recargar (F5)** 🔄. El error con letras rojas desaparecerá de forma definitiva y tu web se encenderá mostrando la hermosa paloma de tu marca en alta definición.
-
-<FollowUp>
-¡Avísame apenas lo guardes y recargues la página! Dime si:
-* ¿La web ya cargó **limpia, en vivo y mostrando tu logotipo oficial**?
-* Si ya quedó lista, **pásame el enlace de tu página** para que pueda entrar a ver el gran resultado final.
-</FollowUp>
