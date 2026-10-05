@@ -53,11 +53,11 @@ with tab1:
         modalidad = st.radio("2. Modalidad de contratación:", ["Por Hora (Servicio Puntual)", "Plan Mensual (Contratación Recurrente)"])
         
         if modalidad == "Por Hora (Servicio Puntual)":
-            horas_opcion = st.selectbox("3. ¿Cuántas horas necesitas para la jornada?", [4, 6, 8])
+            horas_opcion = st.selectbox("3. ¿Cuántas horas necesitas para la jornada?",)
             horas = horas_opcion
             frecuencia_texto = f"Jornada puntual de {horas} horas"
         else:
-            horas_semana = st.selectbox("3. ¿Cuántas horas de limpieza por semana necesitas?", [4, 6, 8])
+            horas_semana = st.selectbox("3. ¿Cuántas horas de limpieza por semana necesitas?",)
             frecuencia_texto = f"Plan Mensual ({horas_semana} hs/semana)"
             horas = horas_semana * 4
 
@@ -162,12 +162,7 @@ with tab3:
 
 st.write("---")
 
-# --- PIE DE PÁGINA DE ALTA CONFIANZA COMPLETAMENTE REESTRUCTURADO SIN ERRORES ---
-st.markdown("""
-<div style="display: flex; justify-content: space-between; gap: 20px; margin-top: 20px;">
-    <div style="flex: 1;">
-        <p style="color:#38BDF8; font-weight: bold; margin-bottom: 5px;">🔒 Garantía de Confianza Elizabeth</p>
-        <p style="font-size:14px; color:#94A3B8; margin-top: 0px;">Filtros rigurosos de seguridad y personal totalmente calificado para tu tranquilidad.</p>
-    </div>
-    <div style="flex: 1;">
-        <p style="color:#EAB308; font-weight: bold; margin-bottom: 5px;">⭐ Compromiso de Calidad 100%</p>
+# --- PIE DE PÁGINA SIMPLE ---
+st.write("🔒 **Garantía de Confianza Elizabeth:** Filtros rigurosos de seguridad y personal calificado.")
+st.write("⭐ **Compromiso de Calidad 100%:** Si un espacio no queda como esperabas, lo repasamos sin costo adicional.")
+st.write("🗓️ **Agendamiento Flexible:** Modifica tus jornadas con hasta 24 horas de anticipación sin cargos.")
