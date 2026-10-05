@@ -43,7 +43,7 @@ tab1, tab2, tab3 = st.tabs(["🧮 Cotizador de Jornadas", "⚡ Nuestros Servicio
 # ==========================================
 with tab1:
     st.markdown("<h3 style='color:#D97706 !important; margin-top:0px;'>🧮 Calcula tu Presupuesto Express</h3>", unsafe_allow_html=True)
-    st.write("Selecciona tu modalidad y las horas exactas de tu jornada para recibir tu cotización.")
+    st.write("Selecciona tu modalidada y las horas exactas de tu jornada para recibir tu cotización.")
     st.write("")
 
     col_form, col_summary = st.columns(2)
