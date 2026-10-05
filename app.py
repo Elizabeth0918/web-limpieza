@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 # Configuración de la página con el nombre de tu marca oficial
 st.set_page_config(page_title="KMG Elizabeth - Servicio Independiente de Limpieza", page_icon="✨", layout="wide")
@@ -9,9 +10,7 @@ st.markdown("""
     /* Fondo general oscuro elegante para resaltar los colores del logo */
     .stApp { background-color: #0F172A; color: #FFFFFF; }
     
-    .brand-title { font-size: 55px !important; font-weight: 900; color: #38BDF8; text-align: center; margin-bottom: 0px; letter-spacing: 2px; }
-    .brand-subtitle { font-size: 26px !important; font-weight: bold; color: #EAB308; text-align: center; margin-bottom: 5px; font-style: italic; }
-    .main-title { font-size: 32px !important; font-weight: normal; color: #FFFFFF; text-align: center; margin-bottom: 25px; }
+    .main-title { font-size: 32px !important; font-weight: bold; color: #38BDF8; text-align: center; margin-top: 15px; margin-bottom: 25px; }
     
     /* Cajas de servicios en azul oscuro con bordes celestes y dorados */
     .feature-box { padding: 22px; border-radius: 12px; background-color: #1E293B; margin-bottom: 20px; border-left: 5px solid #38BDF8; border-top: 1px solid #EAB308; min-height: 160px; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
@@ -24,13 +23,24 @@ st.markdown("""
     
     /* Estilo del contenedor del resumen */
     .summary-box { background-color: #1E293B; padding: 25px; border-radius: 12px; border: 2px solid #EAB308; }
+    
+    /* Centrar logotipo */
+    .logo-container { display: flex; justify-content: center; margin-bottom: 10px; }
     </style>
 """, unsafe_allow_html=True)
 
-# --- HEADER / HERO SECTION CON TU IDENTIDAD ---
-st.markdown('<p class="brand-title">✨ KMG ✨</p>', unsafe_allow_html=True)
-st.markdown('<p class="brand-subtitle">Elizabeth</p>', unsafe_allow_html=True)
-st.markdown('<p class="main-title">LIMPIEZA · SERVICIO INDEPENDIENTE</p>', unsafe_allow_html=True)
+# --- HEADER / INCLUSIÓN DE TU LOGOTIPO REAL ---
+# Intentamos cargar el logo desde la carpeta del proyecto
+if os.path.exists("logo.png"):
+    col_left, col_logo, col_right = st.columns([1, 2, 1])
+    with col_logo:
+        st.image("logo.png", use_container_width=True)
+else:
+    # Si aún no se sube el logo, dejamos el texto elegante como respaldo temporal
+    st.markdown('<div style="text-align:center; font-size:45px; font-weight:bold; color:#38BDF8;">✨ KMG Elizabeth ✨</div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center; font-size:22px; color:#EAB308; font-style:italic;">LIMPIEZA · SERVICIO INDEPENDIENTE</div>', unsafe_allow_html=True)
+
+st.markdown('<p class="main-title">Tu espacio impecable y reluciente, con absoluta confianza</p>', unsafe_allow_html=True)
 
 # --- CONFIGURACIÓN DE PESTAÑAS (NAVEGACIÓN) ---
 tab1, tab2, tab3 = st.tabs(["🧮 Cotizador de Jornadas", "⚡ Nuestros Servicios", "📞 Contacto Directo"])
@@ -53,11 +63,13 @@ with tab1:
         modalidad = st.radio("2. Modalidad de contratación:", ["Por Hora (Servicio Puntual)", "Plan Mensual (Contratación Recurrente)"])
         
         if modalidad == "Por Hora (Servicio Puntual)":
-            horas_opcion = st.selectbox("3. ¿Cuántas horas necesitas para la jornada?",)
+            # Selector exclusivo con las jornadas de 4, 6 y 8 horas solicitadas
+            horas_opcion = st.selectbox("3. ¿Cuántas horas necesitas para la jornada?", [4, 6, 8])
             horas = horas_opcion
             frecuencia_texto = f"Jornada puntual de {horas} horas"
         else:
-            horas_semana = st.selectbox("3. ¿Cuántas horas de limpieza por semana necesitas?",)
+            # Selector exclusivo de 4, 6 y 8 horas por semana para modalidad mensual
+            horas_semana = st.selectbox("3. ¿Cuántas horas de limpieza por semana necesitas?", [4, 6, 8])
             frecuencia_texto = f"Plan Mensual ({horas_semana} hs/semana)"
             horas = horas_semana * 4
 
@@ -165,4 +177,3 @@ st.write("---")
 # --- PIE DE PÁGINA SIMPLE ---
 st.write("🔒 **Garantía de Confianza Elizabeth:** Filtros rigurosos de seguridad y personal calificado.")
 st.write("⭐ **Compromiso de Calidad 100%:** Si un espacio no queda como esperabas, lo repasamos sin costo adicional.")
-st.write("🗓️ **Agendamiento Flexible:** Modifica tus jornadas con hasta 24 horas de anticipación sin cargos.")
