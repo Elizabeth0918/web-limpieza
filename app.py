@@ -41,8 +41,7 @@ tab1, tab2, tab3 = st.tabs(["🧮 Cotizador de Jornadas", "⚡ Nuestros Servicio
 with tab1:
     st.markdown("<h2 style='color:#EAB308 !important;'>🧮 Calcula tu Presupuesto al Instante</h2>", unsafe_allow_html=True)
     st.write("Selecciona el tipo de servicio y las horas requeridas para obtener un estimado detallado.")
-    st.write("")
-
+    
     col_form, col_summary = st.columns(2)
 
     with col_form:
@@ -54,17 +53,14 @@ with tab1:
         modalidad = st.radio("2. Modalidad de contratación:", ["Por Hora (Servicio Puntual)", "Plan Mensual (Contratación Recurrente)"])
         
         if modalidad == "Por Hora (Servicio Puntual)":
-            # Selector estricto de 4, 6 u 8 horas
             horas_opcion = st.selectbox("3. ¿Cuántas horas necesitas para la jornada?", [4, 6, 8])
             horas = horas_opcion
             frecuencia_texto = f"Jornada puntual de {horas} horas"
         else:
-            # Plan mensual basado en horas por semana (4, 6 u 8 horas por semana)
             horas_semana = st.selectbox("3. ¿Cuántas horas de limpieza por semana necesitas?", [4, 6, 8])
             frecuencia_texto = f"Plan Mensual ({horas_semana} hs/semana)"
             horas = horas_semana * 4
 
-        # Estructura de tarifas por hora en $U
         precios_por_hora = {
             "Limpieza de Casas": 350,
             "Limpieza de Oficinas": 400,
@@ -77,7 +73,6 @@ with tab1:
         precio_actual = precios_por_hora[tipo_servicio]
         subtotal = horas * precio_actual
         
-        # Descuento del 15% para el plan mensual
         descuento = 0.15 if modalidad == "Plan Mensual (Contratación Recurrente)" else 0.0
         total = subtotal * (1 - descuento)
 
@@ -103,7 +98,6 @@ with tab1:
         
         if st.button("Reservar Jornada por WhatsApp", type="primary"):
             if nombre and telefono:
-                # Mensaje personalizado con la marca KMG Elizabeth y los detalles exactos
                 mensaje_whatsapp = f"Hola KMG Elizabeth! Me interesa contratar el servicio de *{tipo_servicio}*. Modalidad: {modalidad} ({frecuencia_texto}). El presupuesto estimado de la web es de $U {total:,.2f}. Mi nombre es {nombre} y mi teléfono es {telefono}."
                 link_wa = f"https://wa.me{mensaje_whatsapp.replace(' ', '%20')}"
                 st.success("¡Cotización generada con éxito!")
@@ -168,8 +162,12 @@ with tab3:
 
 st.write("---")
 
-# --- PIE DE PÁGINA DE ALTA CONFIANZA ---
-c1, c2, c3 = st.columns(3)
-with c1:
-    st.markdown("<p style='color:#38BDF8;'>🔒 <b>Garantía de Confianza Elizabeth</b></p><p style='font-size:14px; color:#94A3B8;'>Filtros rigurosos de seguridad y personal totalmente asegurado para tu tranquilidad.</p>", unsafe_allow_html=True)
-with c2:
+# --- PIE DE PÁGINA DE ALTA CONFIANZA COMPLETAMENTE REESTRUCTURADO SIN ERRORES ---
+st.markdown("""
+<div style="display: flex; justify-content: space-between; gap: 20px; margin-top: 20px;">
+    <div style="flex: 1;">
+        <p style="color:#38BDF8; font-weight: bold; margin-bottom: 5px;">🔒 Garantía de Confianza Elizabeth</p>
+        <p style="font-size:14px; color:#94A3B8; margin-top: 0px;">Filtros rigurosos de seguridad y personal totalmente calificado para tu tranquilidad.</p>
+    </div>
+    <div style="flex: 1;">
+        <p style="color:#EAB308; font-weight: bold; margin-bottom: 5px;">⭐ Compromiso de Calidad 100%</p>
